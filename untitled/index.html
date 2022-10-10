@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman Fitness </title>
+
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/CSS/style.css">
+    <style>
+        /* CSS reset? */
+        body {
+            font-family: 'Baloo Bhai', cursive;
+            color: antiquewhite;
+            margin: 0px;
+            padding: 0px;
+            background: url('imeges/abs-ge02e2fad1_1920.jpg');
+        }
+
+        .left {
+            display: inline-block;
+            /* border: 2px solid red; */
+            position: absolute;
+            left: 60px;
+            top: 20px;
+        }
+
+        .left img {
+            width: 100px;
+            filter: invert(100%);
+        }
+
+        .left div {
+            line-height: 11px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .mid {
+            display: block;
+            width: 51%;
+            margin: 29px auto;
+            /* border: 2px solid green; */
+        }
+
+        .right {
+            position: absolute;
+            right: 34px;
+            top: 48px;
+            display: inline-block;
+            /* border: 2px solid yellow; */
+        }
+
+        .navbar {
+            display: inline-block;
+        }
+
+        .navbar li {
+            display: inline-block;
+            font-size: 25px;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            padding: 34px 23px;
+        }
+
+        .navbar li a:hover,
+        .navbar li a.active {
+            text-decoration: underline;
+            color: gray;
+        }
+
+        .btn {
+            font-family: 'Baloo Bhai', cursive;
+            margin: 0px 9px;
+            background-color: black;
+            color: white;
+            padding: 4px 14px;
+            border: 2px solid gray;
+            border-radius: 10px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: rgb(42, 41, 41);
+        }
+        .container{
+            border: 2px solid white;
+            margin: 90px 80px;
+            padding: 75px;
+            width: 33%;
+            border-radius: 28px;
+        }
+        .form-group input{
+            font-family: 'Baloo Bhai', cursive;
+            text-align: center;
+            display: block;
+            width: 508px;
+            padding: 1px;
+            border: 2px solid black;
+            margin: 11px auto;
+            font-size: 25px;
+            border-radius: 8px;
+        }
+        .container h1{
+            text-align: center;
+        }
+        .container button{
+            display: block;
+            width: 85%;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <!-- left box for logo -->
+        <div class="left">
+            <img src="/imeges/logo.jpg" alt="">
+            <div>Aman Fitness</div>
+        </div>
+        <!-- mid box for navbar -->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Fitness Calculator</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+        <!-- right box for buttons -->
+        <div class="right">
+            <button class="btn">Call Now</button>
+            <button class="btn">Email Us</button>
+        </div>
+    </header>
+    <!-- <div class="container">
+        <h1>Join the best gym of kanpur now</h1>
+        <form action="noaction.php">
+            <div class="from-group">
+                <input type="text" name="" placeholder="Enter your name">
+            </div>
+            <div class="from-group">
+                <input type="text" name="" placeholder="Enter your name">
+            </div>
+            <div class="from-group">
+                <input type="text" name="" placeholder="Enter your name">
+            </div>
+            <div class="from-group">
+                <input type="text" name="" placeholder="Enter your name">
+            </div>
+            <button class="btn">Submit</button>
+        </form>
+    </div> -->
+    <div class="container">
+        <h1>Join the best gym of kanpur now</h1>
+        <form action="noaction.php">
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Name">
+            </div>
+            <div class="form-group">
+                <input type="date" name="" placeholder="Enter your Age">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Gender">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Locality">
+            </div>
+            <div class="form-group">
+                <input type="email" name="" placeholder="Enter your Email Id">
+            </div>
+            <div class="form-group">
+                <input type="number" name="" placeholder="Enter your Phone Number">
+            </div>
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
