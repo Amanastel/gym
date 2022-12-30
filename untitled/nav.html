@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav{
+            display: flex;
+            width: 100%;
+            background: #0a5071;
+            position: relative;
+            justify-content: space-between;
+            text-align: center;
+            padding: 15px 30px;
+        }
+        nav .icon{
+            font-size: 30px;
+            font-weight: 800;
+            color: #fff;
+            cursor: pointer;
+        }
+        nav ul{
+            display: flex;
+            list-style: none;
+            margin: auto 0;
+        }
+        nav ul li{
+            margin: 0 2px;
+            
+        }
+        nav ul li a{
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+            text-transform: capitalize;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+        }
+        nav ul li:hover{
+            background: #fff;
+            color: #0a5071;
+        }
+        nav .srarch_box{
+            display: flex;
+            margin: auto 0;
+            height: 35px;
+            line-height: 35px;
+        }
+        nav .srarch_box input{
+            border: none;
+            outline: none;
+            background: #fff;
+            height: 100%;
+            padding: 0 10px;
+            font-size: 20px;
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="icon">design <b style="color: red;">P</b>ro</div>
+        <div class="srarch_box">
+            <input type="search" placeholder="Search hare" id="">
+            <span class="fa fa-search"></span>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">login here</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

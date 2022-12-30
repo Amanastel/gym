@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+  <style>
+    /* Write all necessery css here  */
+
+    #product-container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    #product-container>div {
+      border: 2px solid black;
+      background-color: rgb(185, 236, 236);
+      text-align: center;
+    }
+
+    #product-container>div>img {
+      width: 100%;
+      height: 400px;
+    }
+
+    .nav {
+      width: 100%;
+      height: 100px;
+      border: 1px solid red;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <h1>Masai E-Commerce</h1>
+    <a href="./index.html">Home</a>
+    <a href="./cart.html">Cart</a>
+  </div>
+  <!-- Use this Select Tag for Filtering the Products  -->
+  <select id="filter">
+    <option value="">Filter By Category</option>
+    <option value="Laptop">Laptop</option>
+    <option value="Mobile">Mobile</option>
+    <option value="Speakers">Speakers</option>
+  </select>
+  <div id="product-container">
+    <!-- Here Append All the Products  -->
+  </div>
+</body>
+<script>
+  // Write all necessery JS here 
+
+  let cart = document.getElementsByClassName("btn")
+
+  let localData = JSON.parse(localStorage.getItem("cart")) || []
+
+  let epData = []
+
+  let filter = document.getElementById("filter")
+
+  let allProduct = document.getElementById("product-container")
+
+  fetch("/avi.json")
+    .then((resolve) => {
+      return resolve.json();
+    })
+    .then((Data) => {
+      console.log(Data);
+      epData = Data
+      apiCall(epData)
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+
+
+  filter.addEventListener("change", () => {
+    let come = filter.value
+    let newCome = epData.filter((element) => {
+      return come == element.category;
+    });
+    apiCall(newCome)
+    // console.log(newCome);
+  })
+
+
+
+  function apiCall(data) {
+    allProduct.innerHTML = null
+    data.forEach((element) => {
+
+      let mainBox = document.createElement("div");
+      mainBox.setAttribute("class", "box");
+
+      let img = document.createElement("img");
+      img.setAttribute("src", element.image_link);
+
+      let item = document.createElement("h2")
+      item.innerText = element.brand
+
+      let price = document.createElement("h3")
+      price.innerText = element.price
+
+      let details = document.createElement("p")
+      details.innerText = element.details
+
+      let category = document.createElement("p")
+      category.innerText = element.category
+
+      let btn = document.createElement("button")
+      btn.setAttribute("class", "btn")
+      btn.innerText = "add to cart"
+
+
+      btn.addEventListener("click", () => {
+        let dub = JSON.parse(localStorage.getItem("cart"));
+
+
+        if (dub === null) dub = [];
+        let isAdleadyInCart = false;
+        for (let i = 0; i < dub.length; i++) {
+          if (dub[i].id === element.id) {
+            isAdleadyInCart = true;
+            break;
+          };
+        }
+        if (isAdleadyInCart === true) {
+          alert("Product Already in Cart")
+        }
+        else {
+          dub.push({ ...element, quantity: 1 });
+          localStorage.setItem("cart", JSON.stringify(dub))
+          alert("Product Added To Cart")
+        }
+      })
+
+      mainBox.append(img, item, price, details, category, btn)
+      allProduct.append(mainBox)
+    })
+  }
+</script>
+
+</html>

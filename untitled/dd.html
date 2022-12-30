@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: sans-serif;
+
+        }
+
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .conatiner {
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-color: rgb(120, 114, 114);
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 33px;
+            font-weight: bold;
+            line-height: 70px;
+            padding-left: 40px;
+        }
+        nav{
+            height: 70px;
+            background-color: #063247;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.6);
+        }
+        nav ul{
+            margin-right: 30px;
+        }
+        nav ul li{
+            display: inline-block;
+        }
+        nav ul li a{
+            color: white;
+            display: block;
+            padding: 0 15px;
+            line-height: 70px;
+            font-size: 20px;
+            background: #063247;
+            transition: .5s;
+        }
+        nav ul ul{
+            position: absolute;
+            top: 85px;
+            border-top: 3px solid #23dbdb;
+            opacity: 0;
+            visibility: hidden;
+        }
+        nav ul li:hover > ul{
+            top: 70px;
+            opacity: 1;
+            visibility: visible;
+            transition: .3s linear;
+        }
+
+        nav ul ul li{
+            width: 150px;
+            display: list-item;
+            position: relative;
+            border: 1px solid #042311;
+            border-top: none;
+        }
+
+        nav ul ul li a {
+            line-height: 50px;
+        }
+
+        nav ul ul ul {
+            border-top: none;
+        }
+        nav ul ul ul li{
+            position: relative;
+            top: -70px;
+            left: 150px;
+        }
+        nav ul ul li a{
+            margin-left: 15px ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conatiner">
+        <nav class="flex">
+            <div class="logo">HTT</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li>
+                    <a href="#">Project
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                    <ul>
+                        <li><a href="#">hover efftect</a></li>
+                        <li><a href="#">3d filp card</a></li>
+                        <li><a href="#">loder</a></li>
+                        <li><a href="#">hamburger</a></li>
+                        <li><a href="#">css slider</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Web devpmonet
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#">front end
+                                <i class="fas fa-caret-rigth"></i>
+                            </a>
+                            <ul>
+                                <li><a href="#">html 5</a></li>
+                                <li><a href="#">css3</a></li>
+                                <li><a href="#">bostrap</a></li>
+                                <li><a href="#">JSON</a></li>
+                                <li><a href="#">JAVA SCIRPT</a></li>
+                                <li><a href="#">git hub</a></li>
+                                <li><a href="#">SASS</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">back end
+                                <i class="fas fa-caret-rigth"></i>
+                            </a>
+                            <ul>
+                                <li><a href="#">Node.js</a></li>
+                                <li><a href="#">Mongo.db</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Contect</a>
+                    
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
