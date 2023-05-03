@@ -38,6 +38,8 @@ body {
     transform: scale(10);
     opacity: 0;
     transition: transform .3s,opacity .5s
+    /* display: block; */
+
 }
 
 .ripple:active:after {
@@ -5447,7 +5449,9 @@ strong[data-v-14ed88ba] {
     border-bottom: 1px solid #919191;
     padding-bottom: 4px
 }
-
+body{
+    margin: 0;
+}
 .input_card .card_ul li textarea[data-v-483dad1f] {
     height: 60px
 }
